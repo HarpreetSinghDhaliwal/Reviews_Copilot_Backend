@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ReviewsCopilotBackend
+    env: python
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --reload
+    pythonVersion: 3.11
+    envVars:
+      - key: DATABASE_URL
+        value: your-database-url-here
+      - key: OPENAI_API_KEY
+        value: your-openai-api-key-here
+      - key: OTHER_ENV_VAR
+        value: value-here
