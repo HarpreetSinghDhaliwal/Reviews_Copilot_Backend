@@ -24,7 +24,7 @@ app = FastAPI(title="Reviews Copilot — Professional Backend", version="1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://reviews-copilot-nu.vercel.app/"],  # frontend origin
+    allow_origins=["*"],  # frontend origin
     allow_credentials=True,
     allow_methods=["*"],  # GET, POST, OPTIONS, etc.
     allow_headers=["*"],  # includes x-api-key
